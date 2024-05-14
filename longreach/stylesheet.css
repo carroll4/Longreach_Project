@@ -13,6 +13,10 @@
     background-size: 100%;
 }
 
+body {
+    margin: 1px;
+}
+
 .nav {
     grid-area: nav;
     background-color: rgb(242, 247, 196);
