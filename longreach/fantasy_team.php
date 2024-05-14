@@ -36,9 +36,10 @@
     <body>
         <div class="grid-container">
             <div class="logo">
-                <img src="Images/logo.jpg" style="float: left; width: 14%; height: auto;">
-                <img src="Images/logo.jpg" style="float: right; width: 14%; height: auto;">
+                <img src="Images/logo.jpg" id="logoleft">
+                <img src="Images/logo.jpg" id="logoright">
                 <h1 id="title">Longreach Athletic FC</h1>
+                <h1 id="phonetitle">Longreach Athletic FC</h1>
             </div>
             
             <div class="nav"><div class="btn-group">
