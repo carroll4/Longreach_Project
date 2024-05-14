@@ -66,6 +66,7 @@
                         $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                         while($c = mysqli_fetch_array($players)) {
                         ?>
+                        <option hidden selected>Select Player</option>
                         <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
                         <?php } ?>
                     </select>
@@ -76,6 +77,7 @@
                         $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                         while($c = mysqli_fetch_array($players)) {
                         ?>
+                        <option hidden selected>Select Player</option>
                         <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
                         <?php } ?>
                     </select>
@@ -88,6 +90,7 @@
                         $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                         while($c = mysqli_fetch_array($players)) {
                         ?>
+                        <option hidden selected>Select Player</option>
                         <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
                         <?php } ?>
                     </select>
@@ -98,6 +101,7 @@
                         $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                         while($c = mysqli_fetch_array($players)) {
                         ?>
+                        <option hidden selected>Select Player</option>
                         <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
                         <?php } ?>
                     </select>
@@ -110,6 +114,7 @@
                         $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                         while($c = mysqli_fetch_array($players)) {
                         ?>
+                        <option hidden selected>Select Player</option>
                         <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
                         <?php } ?>
                     </select>
