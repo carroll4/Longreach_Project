@@ -6,7 +6,7 @@ require_once 'config_session.inc.php';  // Session management
 // Check if the form is submitted via POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Retrieve the player selections from the POST data
-    $user_id = $_POST["User_id"];
+    $user_id = $_POST["user_id"];
     $player_1 = $_POST["player_1"];
     $player_2 = $_POST["player_2"];
     $player_3 = $_POST["player_3"];
@@ -16,12 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     try {
         // Create a new entry in the 'user_teams' table (or your relevant table)
-        $sql = "INSERT INTO team_db (User_id, player_1, player_2, player_3, player_4, player_5, team_total) 
-                VALUES (:User_id, :player_1, :player_2, :player_3, :player_4, :player_5, :team_total)";
+        $sql = "INSERT INTO team_db (user_id, player_1, player_2, player_3, player_4, player_5, team_total) 
+                VALUES (:user_id, :player_1, :player_2, :player_3, :player_4, :player_5, :team_total)";
         $stmt = $pdo->prepare($sql);
         
         // Bind values to the prepared statement
-        $stmt->bindParam(':User_id', $user_id);
+        $stmt->bindParam(':user_id', $user_id);
         $stmt->bindParam(':player_1', $player_1);
         $stmt->bindParam(':player_2', $player_2);
         $stmt->bindParam(':player_3', $player_3);
