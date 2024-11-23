@@ -76,7 +76,10 @@ require_once 'includes/config_session.inc.php';
 
             <div class="lower">
                 <h2><u>My Team:</u></h2>
-                <form>
+                <form method="POST" action="save_team.php">
+                    <!-- Hidden field for user_id -->
+                <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" /> 
+
                     <label>Player 1:</label>
                     <!-- give button a id along with f1 function-->
                     <select id="dropdown1" onchange="f1()">
