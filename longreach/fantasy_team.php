@@ -32,6 +32,8 @@ require_once 'includes/config_session.inc.php';
             console.log("Player 3 ID: " + player3ID);
             console.log("Player 4 ID: " + player4ID);
             console.log("Player 5 ID: " + player5ID);
+
+            s.innerHTML = String(player1ID);
             }
          
         </script>
