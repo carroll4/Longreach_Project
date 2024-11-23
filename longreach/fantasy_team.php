@@ -76,7 +76,7 @@ require_once 'includes/config_session.inc.php';
 
             <div class="lower">
                 <h2><u>My Team:</u></h2>
-                <form method="POST" action="save_team.php">
+                <form method="POST" action="includes/save_team.inc.php">
                     <!-- Hidden field for user_id -->
                 <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" /> 
 
