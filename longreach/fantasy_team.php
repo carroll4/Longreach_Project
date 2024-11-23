@@ -19,15 +19,21 @@ require_once 'includes/config_session.inc.php';
             var s = document.getElementById("sum");
             
             s.innerHTML = String(sum);
-            }
-
-            //create function with ajax for saving users teams
-            //button to call javascript 
-            //payload of users selections 
-            //front end validation
             
+            // Retrieve the ID of the selected player for each dropdown
+            var player1ID = dd1.options[dd1.selectedIndex].getAttribute("name");
+            var player2ID = dd2.options[dd2.selectedIndex].getAttribute("name");
+            var player3ID = dd3.options[dd3.selectedIndex].getAttribute("name");
+            var player4ID = dd4.options[dd4.selectedIndex].getAttribute("name");
+            var player5ID = dd5.options[dd5.selectedIndex].getAttribute("name");
 
-
+            console.log("Player 1 ID: " + player1ID);
+            console.log("Player 2 ID: " + player2ID);
+            console.log("Player 3 ID: " + player3ID);
+            console.log("Player 4 ID: " + player4ID);
+            console.log("Player 5 ID: " + player5ID);
+            }
+         
         </script>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
     </head>
