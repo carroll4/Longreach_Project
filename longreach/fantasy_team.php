@@ -27,13 +27,16 @@ require_once 'includes/config_session.inc.php';
             var player4ID = dd4.options[dd4.selectedIndex].getAttribute("name");
             var player5ID = dd5.options[dd5.selectedIndex].getAttribute("name");
 
-            console.log("Player 1 ID: " + player1ID);
-            console.log("Player 2 ID: " + player2ID);
-            console.log("Player 3 ID: " + player3ID);
-            console.log("Player 4 ID: " + player4ID);
-            console.log("Player 5 ID: " + player5ID);
+            var playerIDs = "Player 1 ID: " + player1ID + "<br>" +
+                            "Player 2 ID: " + player2ID + "<br>" +
+                            "Player 3 ID: " + player3ID + "<br>" +
+                            "Player 4 ID: " + player4ID + "<br>" +
+                            "Player 5 ID: " + player5ID;
 
-            s.innerHTML = String(player1ID);
+                // Display the player IDs in the HTML
+                var idDisplay = document.getElementById("playerIDs");
+                idDisplay.innerHTML = playerIDs;
+            
             }
          
         </script>
@@ -137,7 +140,9 @@ require_once 'includes/config_session.inc.php';
                     </select>
                         <!--display total points-->
                     <h2>Team Total Points: <div id="sum" type="text"></h2><br>
-                    <h2>Player1 ID: <div id="player1ID" type="text"></h2><br>
+
+                    <!-- Display player IDs here -->
+                    <div id="playerIDs"></div>
 
                         <!--save users team into database if logged in-->
                     <?php if (isset($_SESSION["user_id"])) { ?>  
