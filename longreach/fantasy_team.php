@@ -19,7 +19,7 @@ require_once 'includes/config_session.inc.php';
             var s = document.getElementById("sum");
             
             s.innerHTML = String(sum);
-            
+
             // Retrieve the ID of the selected player for each dropdown
             var player1ID = dd1.options[dd1.selectedIndex].getAttribute("name");
             var player2ID = dd2.options[dd2.selectedIndex].getAttribute("name");
@@ -135,6 +135,7 @@ require_once 'includes/config_session.inc.php';
                     </select>
                         <!--display total points-->
                     <h2>Team Total Points: <div id="sum" type="text"></h2><br>
+                    <h2>Player1 ID: <div id="player1ID" type="text"></h2><br>
 
                         <!--save users team into database if logged in-->
                     <?php if (isset($_SESSION["user_id"])) { ?>  
