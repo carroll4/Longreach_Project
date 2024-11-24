@@ -15,10 +15,10 @@ require_once 'includes/config_session.inc.php';
             var dd4 = document.getElementById("dropdown4");
             var dd5 = document.getElementById("dropdown5");
 
-            var sum = Number(dd1.value) + Number(dd2.value) + Number(dd3.value) + Number(dd4.value) + Number(dd5.value) ;
-            var s = document.getElementById("sum");
+            var team_total = Number(dd1.value) + Number(dd2.value) + Number(dd3.value) + Number(dd4.value) + Number(dd5.value) ;
+            var s = document.getElementById("team_total");
             
-            s.innerHTML = String(sum);
+            s.innerHTML = String(team_total);
 
             // Retrieve the ID of the selected player for each dropdown
             var player1ID = dd1.options[dd1.selectedIndex].getAttribute("name");
@@ -142,7 +142,7 @@ require_once 'includes/config_session.inc.php';
                         <?php } ?>
                     </select>
                         <!--display total points-->
-                    <h2>Team Total Points: <div id="sum" type="text"></h2><br>
+                    <h2>Team Total Points: <div id="team_total" type="text"></h2><br>
 
                     <!-- Display player IDs here -->
                     <div id="playerIDs"></div>
