@@ -12,12 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $player_3 = $_POST["player3ID"];
     $player_4 = $_POST["player4ID"];
     $player_5 = $_POST["player5ID"];
-    $team_total = $_POST["team_total"];  // You might want to calculate this on the backend if needed
+    $team_total = $_POST["sum"];  // You might want to calculate this on the backend if needed
 
     try {
         // Create a new entry in the 'team_db' table (or your relevant table)
         $sql = "INSERT INTO team_db (user_id, player_1, player_2, player_3, player_4, player_5, team_total) 
-                VALUES (:user_id, :player1ID, :player2ID, :player3ID, :player4ID, :player5ID, :team_total)";
+                VALUES (:user_id, :player1ID, :player2ID, :player3ID, :player4ID, :player5ID, :sum)";
         $stmt = $pdo->prepare($sql);
         
         // Bind values to the prepared statement
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt->bindParam(':player3ID', $player_3);
         $stmt->bindParam(':player4ID', $player_4);
         $stmt->bindParam(':player5ID', $player_5);
-        $stmt->bindParam(':team_total', $team_total);
+        $stmt->bindParam(':sum', $team_total);
 
         // Execute the statement
         $stmt->execute();
