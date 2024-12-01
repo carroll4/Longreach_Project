@@ -82,8 +82,53 @@ require_once 'includes/config_session.inc.php';
             </div>
 
             <div class="lower">
-                <?php if (isset($_SESSION["user_id"])) { ?>  
-                    <h2><u>My Team:</u></h2>
+            <?php
+            // Ensure the user is logged in
+            if (!isset($_SESSION['user_id'])) {
+                header("Location: log_in.php");
+                exit();
+            }
+
+            // Get the user ID
+            $user_id = $_SESSION['user_id'];
+
+            // Query to fetch the user's team details from the `team_db` table
+            $query = "SELECT * FROM `team_db` WHERE user_id = '$user_id' ORDER BY team_id DESC LIMIT 1"; // Assuming `team_id` is the primary key
+            $result = mysqli_query($conn, $query);
+
+            // If a team is found for the user
+            if ($row = mysqli_fetch_assoc($result)) {
+                // Retrieve player IDs
+                $player1ID = $row['player_1'];
+                $player2ID = $row['player_2'];
+                $player3ID = $row['player_3'];
+                $player4ID = $row['player_4'];
+                $player5ID = $row['player_5'];
+                $teamTotal = $row['team_total'];
+
+                // Query to get the player names and points
+                $playersQuery = "SELECT * FROM `players` WHERE ID IN ($player1ID, $player2ID, $player3ID, $player4ID, $player5ID)";
+                $playersResult = mysqli_query($conn, $playersQuery);
+
+                // Display team info
+                echo "<h2>Your Fantasy Team</h2>";
+                echo "<table>";
+                echo "<tr><th>Player Name</th><th>Points</th></tr>";
+                
+                while ($player = mysqli_fetch_assoc($playersResult)) {
+                    echo "<tr>";
+                    echo "<td>" . $player['Name'] . "</td>";
+                    echo "<td>" . $player['Points'] . "</td>";
+                    echo "</tr>";
+                }
+
+                echo "</table>";
+                echo "<h3>Total Team Points: " . $teamTotal . "</h3>";
+
+            } else {
+                echo "<h2>You have not selected a team yet.</h2>";
+                echo "<p>Please create and save your team first.</p>"; ?>
+                                    <h2><u>My Team:</u></h2>
                     <form method="POST" action="includes/save_team.inc.php">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
                         <label for="team_name">Team Name:</label><br>
@@ -152,7 +197,8 @@ require_once 'includes/config_session.inc.php';
                         <?php } ?>
 
                     </form>
-                <?php }?>
+            <?php }?>  
+                    
 
             </div>
 
