@@ -83,7 +83,6 @@ require_once 'includes/config_session.inc.php';
 
             <div class="lower">
                 <?php if (isset($_SESSION["user_id"])) { ?>  
-                    <button class="buttons join" onclick="location.href='log_in.php'"><b>Logout</b></button>
                     <h2><u>My Team:</u></h2>
                     <form method="POST" action="includes/save_team.inc.php">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
