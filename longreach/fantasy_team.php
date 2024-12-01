@@ -133,8 +133,31 @@ require_once 'includes/config_session.inc.php';
             } else { // Show dropdown options for users to create a team if not already 
                 echo "<h2>You have not selected a team yet.</h2>";
                 echo "<p>Please create and save your team first.</p>"; ?>
-                                    <h2><u>My Team:</u></h2>
-                    <form method="POST" action="includes/save_team.inc.php">
+
+<script>
+                function checkDuplicatePlayers() {
+                    var selectedPlayers = [];
+                    
+                    // Get selected players from the dropdowns
+                    selectedPlayers.push(document.getElementById('dropdown1').value);
+                    selectedPlayers.push(document.getElementById('dropdown2').value);
+                    selectedPlayers.push(document.getElementById('dropdown3').value);
+                    selectedPlayers.push(document.getElementById('dropdown4').value);
+                    selectedPlayers.push(document.getElementById('dropdown5').value);
+                    
+                    // Check for duplicates in the array
+                    var uniquePlayers = [...new Set(selectedPlayers)];
+                    
+                    if (uniquePlayers.length !== selectedPlayers.length) {
+                        alert('You cannot select the same player multiple times.');
+                        return false; // Prevent form submission
+                    }
+                    
+                    return true; // Allow form submission
+                }
+            </script>
+                    <h2><u>My Team:</u></h2>
+                    <form method="POST" action="includes/save_team.inc.php" onsubmit="return checkDuplicatePlayers()">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
                         <label for="team_name">Team Name:</label><br>
                         <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name"><br>
