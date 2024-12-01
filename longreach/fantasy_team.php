@@ -123,9 +123,14 @@ require_once 'includes/config_session.inc.php';
                 }
 
                 echo "</table>";
-                echo "<h3>Total Team Points: " . $teamTotal . "</h3>";
+                echo "<h3>Total Team Points: " . $teamTotal . "</h3>"; ?>
 
-            } else {
+                
+                <button class="buttons join" onclick="location.href='edit_team.php'"><b>Edit Team</b></button>
+                <?php
+                
+
+            } else { // Show dropdown options for users to create a team if not already 
                 echo "<h2>You have not selected a team yet.</h2>";
                 echo "<p>Please create and save your team first.</p>"; ?>
                                     <h2><u>My Team:</u></h2>
