@@ -15,6 +15,9 @@ $player3ID = $_POST['player3ID'];
 $player4ID = $_POST['player4ID'];
 $player5ID = $_POST['player5ID'];
 
+// Get team name
+$team_name = $_POST['team_name'];
+
 // Get the points for each player
 $query1 = "SELECT Points FROM `players` WHERE ID = $player1ID";
 $query2 = "SELECT Points FROM `players` WHERE ID = $player2ID";
@@ -48,13 +51,13 @@ if ($row = mysqli_fetch_assoc($result5)) {
 }
 
 // Insert the team into the `team_db` table (replace the `team_db` columns with your actual column names)
-$query = "INSERT INTO `team_db` (user_id, player_1, player_2, player_3, player_4, player_5, team_total) 
-          VALUES ('" . $_SESSION['user_id'] . "', '$player1ID', '$player2ID', '$player3ID', '$player4ID', '$player5ID', '$totalPoints')";
+$query = "INSERT INTO `team_db` (user_id, team_name, player_1, player_2, player_3, player_4, player_5, team_total) 
+          VALUES ('" . $_SESSION['user_id'] . "', '$team_name', '$player1ID', '$player2ID', '$player3ID', '$player4ID', '$player5ID', '$totalPoints')";
 
 // Execute the query
 if (mysqli_query($conn, $query)) {
     echo "Team successfully saved!";
-    header("Location: fantasy_team.php");  // Redirect to the fantasy page after submission
+    header("Location: ../fantasy_team.php");  // Redirect to the fantasy page after submission
     exit();
 } else {
     echo "Error saving team: " . mysqli_error($conn);

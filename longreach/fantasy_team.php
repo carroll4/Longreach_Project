@@ -77,80 +77,83 @@ require_once 'includes/config_session.inc.php';
                 <br>
                 <p><b>Team will consist of 5 Players of your choice.
                      Each player will score their own points based on how they preform throught the season.
-                    Infomation on how points will be scored can be found on the help page.</b></p>
+                    Infomation on how points will be scored can be found on the help page. MUST BE LOGGED IN TO ACCESS THIS FEATURE!</b></p>
 
             </div>
 
             <div class="lower">
-                <h2><u>My Team:</u></h2>
-                <form method="POST" action="includes/save_team.inc.php">
-                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
-                    <label for="team_name">Team Name:</label><br>
-                    <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name"><br>
+                <?php if (isset($_SESSION["user_id"])) { ?>  
+                    <button class="buttons join" onclick="location.href='log_in.php'"><b>Logout</b></button>
+                    <h2><u>My Team:</u></h2>
+                    <form method="POST" action="includes/save_team.inc.php">
+                        <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
+                        <label for="team_name">Team Name:</label><br>
+                        <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name"><br>
 
-                    <label>Player 1:</label>
-                    <select id="dropdown1" onchange="f1()">
-                        <?php
-                        // Get players from database for user to select from
-                        $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
-                        while($c = mysqli_fetch_array($players)) {
-                        ?>
-                        <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                        <label>Player 1:</label>
+                        <select id="dropdown1" onchange="f1()">
+                            <?php
+                            // Get players from database for user to select from
+                            $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
+                            while($c = mysqli_fetch_array($players)) {
+                            ?>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="player1ID" id="player1ID">
+
+                        <label>Player 2:</label>
+                        <select id="dropdown2" onchange="f1()">
+                            <?php
+                            $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
+                            while($c = mysqli_fetch_array($players)) {
+                            ?>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="player2ID" id="player2ID">
+
+                        <label>Player 3:</label>
+                        <select id="dropdown3" onchange="f1()">
+                            <?php
+                            $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
+                            while($c = mysqli_fetch_array($players)) {
+                            ?>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="player3ID" id="player3ID">
+
+                        <label>Player 4:</label>
+                        <select id="dropdown4" onchange="f1()">
+                            <?php
+                            $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
+                            while($c = mysqli_fetch_array($players)) {
+                            ?>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="player4ID" id="player4ID">
+
+                        <label>Player 5:</label>
+                        <select id="dropdown5" onchange="f1()">
+                            <?php
+                            $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
+                            while($c = mysqli_fetch_array($players)) {
+                            ?>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <?php } ?>
+                        </select>
+                        <input type="hidden" name="player5ID" id="player5ID">
+
+                        <h2>Team Total Points: <div id="team_total" type="text"></h2><br>
+
+                        <?php if (isset($_SESSION["user_id"])) { ?>  
+                        <input class="buttons join" type="submit" value="Submit">
                         <?php } ?>
-                    </select>
-                    <input type="hidden" name="player1ID" id="player1ID">
 
-                    <label>Player 2:</label>
-                    <select id="dropdown2" onchange="f1()">
-                        <?php
-                        $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
-                        while($c = mysqli_fetch_array($players)) {
-                        ?>
-                        <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="hidden" name="player2ID" id="player2ID">
-
-                    <label>Player 3:</label>
-                    <select id="dropdown3" onchange="f1()">
-                        <?php
-                        $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
-                        while($c = mysqli_fetch_array($players)) {
-                        ?>
-                        <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="hidden" name="player3ID" id="player3ID">
-
-                    <label>Player 4:</label>
-                    <select id="dropdown4" onchange="f1()">
-                        <?php
-                        $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
-                        while($c = mysqli_fetch_array($players)) {
-                        ?>
-                        <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="hidden" name="player4ID" id="player4ID">
-
-                    <label>Player 5:</label>
-                    <select id="dropdown5" onchange="f1()">
-                        <?php
-                        $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
-                        while($c = mysqli_fetch_array($players)) {
-                        ?>
-                        <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
-                        <?php } ?>
-                    </select>
-                    <input type="hidden" name="player5ID" id="player5ID">
-
-                    <h2>Team Total Points: <div id="team_total" type="text"></h2><br>
-
-                    <?php if (isset($_SESSION["user_id"])) { ?>  
-                    <input class="buttons join" type="submit" value="Submit">
-                    <?php } ?>
-
-                </form>
+                    </form>
+                <?php }?>
 
             </div>
 
