@@ -59,14 +59,14 @@ require_once 'includes/login_view.inc.php';
                 </div>
                 <h2 style="float: left;"><b><u>All players stats</u></b></h2>
                 <?php
-                $sql = "SELECT `Name`, `Goals`, `Assists`, `Games_Played`, `Clean_Sheets`, `Points` FROM `players` ORDER BY `Points` DESC";
+                $sql = "SELECT `Name`, `Goals`, `Assists`, `Games_Played`, `Clean_Sheets`,`MOTMs`, `Points` FROM `players` ORDER BY `Points` DESC";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                    echo "<table><tr><th>Name</th><th>Goals</th><th>Assits</th><th>Games Played</th><th>Clean Sheets</th><th>Points</th></tr>";
+                    echo "<table><tr><th>Name</th><th>Goals</th><th>Assits</th><th>Games Played</th><th>Clean Sheets</th><th>MOTMs</th><th>Points</th></tr>";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["Name"]. "</td><td>" . $row["Goals"]. "</td><td> " . $row["Assists"]. "</td><td>" . $row["Games_Played"]. "</td><td>" . $row["Clean_Sheets"]. "</td><td>" . $row["Points"]. "</td></tr>";
+                        echo "<tr><td>" . $row["Name"]. "</td><td>" . $row["Goals"]. "</td><td> " . $row["Assists"]. "</td><td>" . $row["Games_Played"]. "</td><td>" . $row["Clean_Sheets"]. "</td><td>" . $row["MOTMs"]. "</td><td>" . $row["Points"]. "</td></tr>";
                     }
                         echo "</table>";
                     } else {
