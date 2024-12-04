@@ -98,7 +98,7 @@ require_once 'includes/login_view.inc.php';
             ?>                
             <div class="btn-group">
                 <button class="button view_team" onclick="location.href='fantasy_team.php'"><b>View Team</b></button>
-                <button class="button leaderboard" onclick="location.href='leaderboard.php'"><b>Leaderbaord</b></button>    
+                <button class="button leaderboard" onclick="location.href='leaderboard.php'"><b>Leaderboard</b></button>    
             </div>
             <?php
 
