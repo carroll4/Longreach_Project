@@ -74,7 +74,9 @@ require_once 'includes/login_view.inc.php';
                                  Game played = 1 Point <br>
                                  MOTM = 2 Points <br>
                                  Yellow card = -1 Point <br>
+                                 Red card = -3 Point <br>
                                  Donkey = -2 Points <br>
+                                 Missed pen = -2 Points <br>
                                 <br>
                              <u>(Points will be updates 24 hours after matches)</u><br>
                             </p>

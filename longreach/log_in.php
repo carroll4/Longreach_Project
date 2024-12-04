@@ -10,11 +10,23 @@ require_once 'includes/login_view.inc.php';
     <link rel="stylesheet" href="stylesheet.css">
 </head>
     <body>
-      <div class="nav"><div class="btn-group">
+    <div class="grid-container">
+            <div class="logo">
+                <img src="Images/logo.jpg" id="logoleft">
+                <img src="Images/logo.jpg" id="logoright">
+                <h1 id="title">Longreach Athletic FC</h1>
+                <h1 id="phonetitle">Longreach Athletic FC</h1>
+            </div>
+            
+            <div class="nav"><div class="btn-group">
                 <button class="buttons home" onclick="location.href='home.php'"><b>Home</b></button>
-      </div></div>
+                <button class="buttons fixtures"onclick="location.href='fixtures.php'" ><b>Fixtures & Results</b></button>
+                <button class="buttons fantasy" onclick="location.href='fantasy_team.php'"><b>Fantasy Team</b></button>
+                <button class="buttons team" onclick="location.href='help.php'"><b>Help Page</b></button>
+            </div></div>
+    </div>
 
-      <h3>
+      <h3 style="text-align: center;">
         <?php
         output_username();
         ?>
@@ -70,6 +82,6 @@ require_once 'includes/login_view.inc.php';
 
           
 
-        </div>
+          </div>
     </body>
 </html>

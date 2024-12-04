@@ -1,6 +1,9 @@
 <?php
 include 'includes/connect.inc.php';
 require_once 'includes/config_session.inc.php';
+require_once 'includes/signup_view.inc.php';
+require_once 'includes/login_view.inc.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,6 +94,13 @@ require_once 'includes/config_session.inc.php';
 
             // Get the user ID
             $user_id = $_SESSION['user_id'];
+
+            ?>                
+            <div class="btn-group">
+                <button class="button view_team" onclick="location.href='fantasy_team.php'"><b>View Team</b></button>
+                <button class="button leaderboard" onclick="location.href='leaderboard.php'"><b>Leaderbaord</b></button>    
+            </div>
+            <?php
 
             // Query to fetch the user's team details from the `team_db` table
             $query = "SELECT * FROM `team_db` WHERE user_id = '$user_id' ORDER BY team_id DESC LIMIT 1"; // Assuming `team_id` is the primary key
