@@ -17,9 +17,14 @@
 #phonetitle{
     display: none;
 }
+/*Change elements if on phone display*/
 @media screen and (max-width: 675px) {
     .grid-container{
         grid-template-columns: 0% 100% 0%;
+    }
+
+    .twitter{
+        display: none;
     }
     #phonetitle{
         display:block;
@@ -41,6 +46,22 @@
     }
     #logoright{
         display: none;
+    }
+    .join {
+        background-color: rgb(4, 0, 255);
+        color: white;
+        width: 18%;
+        border: 1px solid black;
+        font-size: 100%;
+    }
+    .buttons {
+        font-size: 12px;
+
+    }
+    .lower{
+        background-color: white;
+        text-align: center;
+        padding: 1% 3%;
     }
 }
 

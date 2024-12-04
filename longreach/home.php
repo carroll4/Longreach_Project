@@ -33,8 +33,8 @@ require_once 'includes/login_view.inc.php';
                         <div class="twitter"><a class="twitter-timeline" data-width="75%" data-height="370" data-theme="light" href="https://twitter.com/LongreachUTR?ref_src=twsrc%5Etfw">Tweets by LongreachUTR</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div></div>
                     <div class="column">
-                        <h1><b><u>Welcome to Longreach</u></b></h1>
-                        <p>Welcome to the mighty reach!<br><br>
+                        <h1 style="font-size:4vw;"><b><u>Welcome to Longreach</u></b></h1>
+                        <p style="font-size: 2vw;">Welcome to the mighty reach!<br><br>
                         We are a local Sunday Football club located in Bristol that play for the Bristol Premeir Sunday Football league.
                         Longreach currently have 2 team in this league, Longreach firsts are currently in division 2 and the Reserves are in division 3.
                         Our home games are played at Patchway School fields on grass(BS32 4AJ).</p>
@@ -46,16 +46,16 @@ require_once 'includes/login_view.inc.php';
                 <button class="buttons join" onclick="location.href='fantasy_team.php'"><b>Pick Fantasy Team</b></button>
                 <br>
                 <br>
-                <h2 style="float: left;"><b><u>Top 20 Point Scorers</u></b></h2>
+                <h2 style="float: left;"><b><u>Top 5 Goal Scorers</u></b></h2>
                 <?php
-                $sql = "SELECT `Name`, `Goals`, `Assists`, `Games_Played`, `Clean_Sheets`, `Points` FROM `players` ORDER BY `Points` DESC LIMIT 20";
+                $sql = "SELECT `Name`, `Goals`, `Assists`, `Games_Played`, `Points` FROM `players` ORDER BY `Goals` DESC LIMIT 5";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                    echo "<table><tr><th>Name</th><th>Goals</th><th>Assits</th><th>Games Played</th><th>Clean Sheets</th><th>Points</th></tr>";
+                    echo "<table><tr><th>Name</th><th>Goals</th><th>Assits</th><th>Games Played</th><th>Points</th></tr>";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["Name"]. "</td><td>" . $row["Goals"]. "</td><td> " . $row["Assists"]. "</td><td>" . $row["Games_Played"]. "</td><td>" . $row["Clean_Sheets"]. "</td><td>" . $row["Points"]. "</td></tr>";
+                        echo "<tr><td>" . $row["Name"]. "</td><td>" . $row["Goals"]. "</td><td> " . $row["Assists"]. "</td><td>" . $row["Games_Played"]. "</td><td>" . $row["Points"]. "</td></tr>";
                     }
                         echo "</table>";
                     } else {

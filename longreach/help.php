@@ -38,27 +38,6 @@ require_once 'includes/login_view.inc.php';
                 <h1><u>Contact us</u></h1>
                 <p>If you are intrestred in joining Longreach Athletic please <a href="https://outlook.live.com/owa/" target="_blank">click here</a>
                      to contact one of are admins for details!</p>
-
-                     <br>
-                <h2 style="float: left;"><b><u>Leaderboard</u></b></h2>
-                <?php
-                $sql = "SELECT * FROM `team_db` ORDER BY `team_db`.`team_total` DESC";
-                $result = $conn->query($sql);
-
-                if ($result->num_rows > 0) {
-                    echo "<table><tr><th>Name</th><th>Points</th></tr>";
-                    // output data of each row
-                    while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["team_name"]. "</td><td>" . $row["team_total"]. "</td></tr>";
-                    }
-                        echo "</table>";
-                    } else {
-                        echo "0 results";
-                }
-                $conn->close();
-                ?>
-                <br>
-
             </div>
             
             <div class="lower">
