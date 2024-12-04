@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 24, 2024 at 06:10 PM
+-- Generation Time: Dec 05, 2024 at 12:15 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -47,22 +47,22 @@ CREATE TABLE `players` (
 --
 
 INSERT INTO `players` (`ID`, `Name`, `Position`, `Price`, `Goals`, `Assists`, `Games_Played`, `Clean_sheets`, `MOTMs`, `Yellow_Cards`, `Donkey`, `Points`) VALUES
-(1, 'Lewis C', 'DEF', 2, 0, 5, 9, 4, 1, 0, 1, 31),
-(2, 'Matt T', 'ATT', 7, 14, 3, 6, 0, 1, 0, 0, 56),
-(3, 'Pinky', 'DEF', 3, 2, 5, 6, 2, 0, 0, 2, 24),
-(4, 'Conor B', 'DEF', 1, 0, 1, 9, 4, 0, 0, 1, 21),
-(5, 'Steven W', 'MID', 2, 3, 3, 8, 0, 0, 1, 0, 22),
-(6, 'Jack C', 'DEF', 3, 0, 2, 8, 4, 1, 0, 0, 26),
-(7, 'Tyler D', 'MID', 4, 1, 2, 8, 0, 0, 1, 1, 12),
+(1, 'Lewis C', 'DEF', 2, 0, 5, 11, 4, 1, 0, 1, 33),
+(2, 'Matt T', 'ATT', 7, 16, 3, 7, 0, 1, 0, 0, 63),
+(3, 'Pinky', 'DEF', 3, 2, 5, 8, 2, 0, 0, 2, 26),
+(4, 'Conor B', 'DEF', 1, 0, 1, 11, 4, 0, 0, 1, 23),
+(5, 'Steven W', 'MID', 2, 3, 3, 9, 0, 0, 1, 0, 23),
+(6, 'Jack C', 'DEF', 3, 1, 3, 10, 4, 2, 0, 0, 35),
+(7, 'Tyler D', 'MID', 3, 1, 2, 9, 0, 0, 1, 1, 13),
 (8, 'Jordan C', 'ATT', 4, 6, 4, 7, 0, 1, 0, 0, 35),
-(9, 'Josh C', 'ATT', 1, 3, 2, 5, 0, 0, 3, 2, 11),
-(10, 'Josh S', 'DEF', 2, 0, 1, 8, 4, 0, 0, 0, 22),
-(11, 'Jack D', 'DEF', 1, 1, 0, 5, 2, 0, 0, 0, 14),
+(9, 'Josh C', 'ATT', 1, 3, 2, 7, 0, 0, 5, 3, 9),
+(10, 'Josh S', 'DEF', 2, 0, 1, 10, 4, 0, 0, 0, 24),
+(11, 'Jack D', 'DEF', 1, 1, 0, 6, 2, 0, 0, 0, 15),
 (12, 'Jake C', 'DEF', 1, 0, 0, 5, 1, 0, 0, 0, 8),
-(13, 'Ben T', 'MID', 2, 2, 0, 8, 0, 0, 0, 0, 14),
-(14, 'Conor D', 'ATT', 4, 6, 8, 6, 0, 1, 0, 0, 42),
+(13, 'Ben T', 'MID', 2, 2, 0, 10, 0, 0, 0, 0, 16),
+(14, 'Conor D', 'ATT', 4, 7, 9, 7, 0, 1, 0, 0, 48),
 (15, 'Graham T', 'DEF', 1, 0, 0, 10, 1, 2, 0, 0, 17),
-(16, 'Aaron T', 'ATT', 4, 4, 2, 11, 0, 0, 0, 1, 25),
+(16, 'Aaron T', 'ATT', 3, 4, 2, 11, 0, 0, 0, 1, 25),
 (17, 'Gummy', 'ATT', 1, 0, 0, 6, 0, 0, 0, 1, 4),
 (18, 'Dan J', 'DEF', 1, 1, 0, 8, 1, 0, 0, 3, 8),
 (19, 'Crispin', 'MID', 2, 1, 1, 9, 0, 1, 0, 0, 16);
@@ -102,19 +102,20 @@ CREATE TABLE `team_db` (
 --
 
 INSERT INTO `team_db` (`Team_id`, `User_id`, `team_name`, `player_1`, `player_2`, `player_3`, `player_4`, `player_5`, `team_total`) VALUES
-(1, 2, 'Lewis FC', 1, 2, 15, 6, 13, 144),
-(2, 1, 'Steven FC', 12, 2, 5, 9, 14, 139),
-(3, 3, 'Graham FC', 1, 2, 13, 15, 3, 142),
-(4, 6, 'Jordan C FC', 16, 14, 9, 5, 8, 135),
-(5, 7, 'Tyler FC', 2, 12, 8, 13, 9, 123),
-(6, 8, 'Burge FC', 2, 15, 7, 12, 6, 119),
-(7, 9, 'Matt FC', 2, 14, 1, 4, 15, 167),
-(8, 10, 'Josh Clayton FC', 2, 3, 9, 11, 6, 131),
-(9, 11, 'Ben T FC', 2, 12, 4, 8, 13, 134),
-(10, 12, 'Jake Cox FC', 2, 17, 19, 12, 14, 126),
-(11, 13, 'Pinky FC', 3, 2, 1, 18, 13, 133),
-(12, 14, 'Cogz FC', 2, 1, 6, 9, 13, 138),
-(13, 15, 'Josh S FC', 2, 1, 10, 15, 3, 148);
+(1, 2, 'Lewis FC', 1, 2, 15, 6, 13, 164),
+(2, 1, 'Steven FC', 12, 2, 5, 9, 14, 151),
+(3, 3, 'Graham FC', 1, 2, 13, 15, 3, 155),
+(4, 6, 'Jordan C FC', 16, 14, 9, 5, 8, 140),
+(5, 7, 'Tyler FC', 2, 12, 8, 13, 9, 131),
+(6, 8, 'Burge FC', 2, 15, 7, 12, 6, 136),
+(7, 9, 'Matt FC', 2, 14, 1, 4, 15, 184),
+(8, 10, 'Josh Clayton FC', 2, 3, 9, 11, 6, 148),
+(9, 11, 'Ben T FC', 2, 12, 4, 8, 13, 145),
+(10, 12, 'Jake Cox FC', 2, 17, 19, 12, 14, 139),
+(11, 13, 'Pinky FC', 3, 2, 1, 18, 13, 146),
+(12, 14, 'Cogz FC', 2, 1, 6, 9, 13, 156),
+(13, 15, 'Josh S FC', 2, 1, 10, 15, 3, 163),
+(18, 16, '', 17, 1, 12, 6, 2, 143);
 
 -- --------------------------------------------------------
 
@@ -149,7 +150,8 @@ INSERT INTO `users` (`id`, `username`, `pwd`, `email`) VALUES
 (13, 'test9', '$2y$12$eC0kYIEnToGTx976YOcYIeafsvx5u9cLu7Hz2H2VnlyDjGlkazn3G', 'test9@outlook.com'),
 (14, 'test10', '$2y$12$nzPE5bh98nkkPY1qoZJla.0jjkx96.6nbqrDDBOsqu5oHju9rWl6i', 'test10@outlook.com'),
 (15, 'test11', '$2y$12$z8ukIbLY76Uco/iOVfdSDeuBlcOom4M8hKNbF0EavjMQ6shNpPLqe', 'test11@outlook.co.uk'),
-(16, 'test123abc', '$2y$12$Ua1pX9qoMdbEEuMIscM.DuY1BfEZpgLzot2c1fqTtm.S4PYYGV62S', 'test123abc@outlook.com');
+(16, 'test123abc', '$2y$12$Ua1pX9qoMdbEEuMIscM.DuY1BfEZpgLzot2c1fqTtm.S4PYYGV62S', 'test123abc@outlook.com'),
+(17, 'amy', '$2y$12$4Qj.NR0dv5l5J5x0rNGuF.SnX75nl5z1ctxaX8oD3fQWpYtUBqfMS', 'amy@outlook.com');
 
 --
 -- Indexes for dumped tables
@@ -193,13 +195,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `team_db`
 --
 ALTER TABLE `team_db`
-  MODIFY `Team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `Team_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
