@@ -57,16 +57,16 @@ require_once 'includes/login_view.inc.php';
                     <button class="button player_stats" onclick="location.href='stats.php'"><b>players stats</b></button>
 
                 </div>
-                <h2 style="float: left;"><b><u>Leaderboard</u></b></h2>
+                <h2 style="float: left;"><b><u>All players stats</u></b></h2>
                 <?php
-                $sql = "SELECT * FROM `team_db` ORDER BY `team_db`.`team_total` DESC";
+                $sql = "SELECT `Name`, `Goals`, `Assists`, `Games_Played`, `Clean_Sheets`, `Points` FROM `players` ORDER BY `Points` DESC";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
-                    echo "<table><tr><th>Name</th><th>Points</th></tr>";
+                    echo "<table><tr><th>Name</th><th>Goals</th><th>Assits</th><th>Games Played</th><th>Clean Sheets</th><th>Points</th></tr>";
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
-                        echo "<tr><td>" . $row["team_name"]. "</td><td>" . $row["team_total"]. "</td></tr>";
+                        echo "<tr><td>" . $row["Name"]. "</td><td>" . $row["Goals"]. "</td><td> " . $row["Assists"]. "</td><td>" . $row["Games_Played"]. "</td><td>" . $row["Clean_Sheets"]. "</td><td>" . $row["Points"]. "</td></tr>";
                     }
                         echo "</table>";
                     } else {
@@ -74,7 +74,6 @@ require_once 'includes/login_view.inc.php';
                 }
                 $conn->close();
                 ?>
-                <br>
 
             </div>
             <div class="left">
