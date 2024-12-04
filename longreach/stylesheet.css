@@ -147,7 +147,7 @@ body {
     padding: 1%;
     text-align: center;
     display: inline-block;
-    font-size: 1vw;
+    font-size: 1.5vw;
     cursor: pointer;
     transition-duration: 0.5s;
 }
