@@ -33,8 +33,8 @@ require_once 'includes/login_view.inc.php';
                         <div class="twitter"><a class="twitter-timeline" data-width="75%" data-height="370" data-theme="light" href="https://twitter.com/LongreachUTR?ref_src=twsrc%5Etfw">Tweets by LongreachUTR</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div></div>
                     <div class="column">
-                        <h1 style="font-size:4vw;"><b><u>Welcome to Longreach</u></b></h1>
-                        <p style="font-size: 2vw;">Welcome to the mighty reach!<br><br>
+                        <h1 style="font-size:3vw;"><b><u>Welcome to Longreach</u></b></h1>
+                        <p style="font-size: 1.6vw;">Welcome to the mighty reach!<br><br>
                         We are a local Sunday Football club located in Bristol that play for the Bristol Premeir Sunday Football league.
                         Longreach currently have 2 team in this league, Longreach firsts are currently in division 2 and the Reserves are in division 3.
                         Our home games are played at Patchway School fields on grass(BS32 4AJ).</p>
@@ -69,7 +69,7 @@ require_once 'includes/login_view.inc.php';
                 <a href="https://www.instagram.com/longreach_afc/?hl=en-gb" target="_blank"><img src="Images/insta.jpg" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
                 <a href="https://twitter.com/longreachutr" target="_blank"><img src="Images/twitter.png" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
                 <br>
-                <p style="float: left;"><b>Copy Right | Privacy Notice | Terms of Use</b></p>
+                <p style="float: left; font-size: 1.6vw;" ><b>Copy Right | Privacy Notice | Terms of Use</b></p>
             </div>
 
             <div class="left">
