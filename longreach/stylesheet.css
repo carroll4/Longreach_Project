@@ -23,6 +23,14 @@
         grid-template-columns: 0% 100% 0%;
     }
 
+    .twitter{
+        display: none;
+    }
+
+    #cup_img{
+        display: none;
+    }
+
     #phonetitle{
         display:block;
         color: white;
@@ -135,6 +143,13 @@ body {
     float: right;
     width: 14%;
 
+}
+
+/*------------------Footer--------------*/
+
+#footer_p{
+    float: left;
+    font-size: 1.6vw;
 }
 
 /*--------------------------navigation+Buttons--------------------------------- */
@@ -285,6 +300,10 @@ td {
     .column {
         flex: 100%;
         padding: 5px;
+    }
+
+    #cup_img{
+        width: 78%;
     }
 
 /*--------------------form page----------------------*/
