@@ -21,7 +21,7 @@ require_once 'includes/login_view.inc.php';
             </div>
             
             <div class="nav"><div class="btn-group">
-                <button class="buttons home" onclick="location.href='home.php'"><b>Home</b></button>
+                <button class="buttons home" onclick="location.href='index.php'"><b>Home</b></button>
                 <button class="buttons fixtures" onclick="location.href='fixtures.php'"><b>Fixtures & Results</b></button>
                 <button class="buttons fantasy" onclick="location.href='fantasy_team.php'"><b>Fantasy Team</b></button>
                 <button class="buttons team"><b>Help Page</b></button>
