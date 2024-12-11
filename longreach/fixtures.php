@@ -30,27 +30,23 @@ require_once 'includes/login_view.inc.php';
             <div class="mid">
                 <h1 style="float: left; font-size: 110%;"><u>Longreach Firsts: Fixtures & Results</u></h1><h1 style="float: right; font-size: 110%;"><u>Longreach Reserves: Fixtures & Results</u></h1>
                 <!--first teams api-->
-                <div id="lrep705596635" style="width: 42%; float: left;">Data loading....<a href="https://fulltime.thefa.com/index.html?divisionseason=816016533">click here for Division 2</a><br/><br/>
-                    <a href=http://www.thefa.com/FULL-TIME>FULL-TIME Home</a></div>
+                <div id="lrep872776627" style="width: 42%; float: left;">Data loading....<a href="https://fulltime.thefa.com/index.html?divisionseason=281245713">click here for Division 2</a><br/><br/>
+                    <a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
                     <script language="javascript" type="text/javascript">
-                    var lrcode = '705596635'
+                    var lrcode = '872776627'
                     </script>
                     <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
                 <!--second teams api-->
-                <div id="lrep104745148" style="width: 42%; float: right;">Data loading....<a href="https://fulltime.thefa.com/index.html?divisionseason=237926781">click here for Division 3</a><br/><br/>
-                    <a href=http://www.thefa.com/FULL-TIME>FULL-TIME Home</a></div>
-                <script language="javascript" type="text/javascript">
-                var lrcode = '104745148'
-                </script>
-                <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script>
+                <div id="lrep630580359" style="width: 42%; float: right;">Data loading....<a href="https://fulltime.thefa.com/index.html?divisionseason=445761360">click here for Division 3</a><br/><br/><a href="http://www.thefa.com/FULL-TIME">FULL-TIME Home</a></div>
+                    <script language="javascript" type="text/javascript">
+                    var lrcode = '630580359'
+                    </script>
+                    <script language="Javascript" type="text/javascript" src="https://fulltime.thefa.com/client/api/cs1.js"></script> 
             </div>
 
-            <div class="footer">
-                <a href="https://www.instagram.com/longreach_afc/?hl=en-gb" target="_blank"><img src="Images/insta.jpg" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
-                <a href="https://twitter.com/longreachutr" target="_blank"><img src="Images/twitter.png" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
-                <br>
-                <p id="footer_p"><b>Copy Right | Privacy Notice | Terms of Use</b></p>
-            </div>
+            <?php 
+            include_once 'footer.php';
+            ?>
 
             <div class="left">
                 <p></p>

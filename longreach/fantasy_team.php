@@ -171,7 +171,7 @@ require_once 'includes/login_view.inc.php';
                     <form method="POST" action="includes/save_team.inc.php" onsubmit="return checkDuplicatePlayers()">
                         <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>" />
                         <label for="team_name">Team Name:</label><br>
-                        <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name"><br>
+                        <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name" required><br>
 
                         <label>Player 1:</label>
                         <select id="dropdown1" onchange="f1()">
@@ -241,12 +241,9 @@ require_once 'includes/login_view.inc.php';
 
             </div>
 
-            <div class="footer">
-                <a href="https://www.instagram.com/longreach_afc/?hl=en-gb" target="_blank"><img src="Images/insta.jpg" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
-                <a href="https://twitter.com/longreachutr" target="_blank"><img src="Images/twitter.png" style="float: right; width: 8vw; height: 8vw; padding: 2px;"></a>
-                <br>
-                <p id="footer_p"><b>Copy Right | Privacy Notice | Terms of Use</b></p>
-            </div>
+            <?php 
+            include_once 'footer.php';
+            ?>
 
             <div class="left">
                 <p></p>
