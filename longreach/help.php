@@ -33,7 +33,7 @@ require_once 'includes/login_view.inc.php';
 
             <div class="mid">
                 <h1><u>Contact us</u></h1>
-                <p>If you are intrestred in joining Longreach Athletic please <a href="https://outlook.live.com/owa/" target="_blank">click here</a>
+                <p>If you are intrestred in joining Longreach Athletic please <a href="mailto:graham.troth@axiell.com">click here</a>
                      to contact one of are admins for details!</p>
             </div>
             

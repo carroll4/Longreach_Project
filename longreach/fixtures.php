@@ -45,7 +45,7 @@ require_once 'includes/login_view.inc.php';
             </div>
 
             <?php 
-            include_once 'footer.php';
+            include_once 'footer1.php';
             ?>
 
             <div class="left">
