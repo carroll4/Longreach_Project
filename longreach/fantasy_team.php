@@ -145,16 +145,16 @@ require_once 'includes/login_view.inc.php';
                 echo "<h2>You have not selected a team yet.</h2>";
                 echo "<p>Please create and save your team first.</p>"; ?>
 
-<script>
+            <script>
                 function checkDuplicatePlayers() {
                     var selectedPlayers = [];
                     
                     // Get selected players from the dropdowns
-                    selectedPlayers.push(document.getElementById('dropdown1').value);
-                    selectedPlayers.push(document.getElementById('dropdown2').value);
-                    selectedPlayers.push(document.getElementById('dropdown3').value);
-                    selectedPlayers.push(document.getElementById('dropdown4').value);
-                    selectedPlayers.push(document.getElementById('dropdown5').value);
+                    selectedPlayers.push(document.getElementById('player1ID').value);
+                    selectedPlayers.push(document.getElementById('player2ID').value);
+                    selectedPlayers.push(document.getElementById('player3ID').value);
+                    selectedPlayers.push(document.getElementById('player4ID').value);
+                    selectedPlayers.push(document.getElementById('player5ID').value);
                     
                     // Check for duplicates in the array
                     var uniquePlayers = [...new Set(selectedPlayers)];

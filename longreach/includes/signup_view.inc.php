@@ -16,7 +16,9 @@ function check_signup_errors() {
         unset($_SESSION['errors_signup']);
     } 
     else if (isset($_GET["signup"]) && $_GET["signup"] === "success") {
-        echo '<br>';
-        echo '<p>Signup sucess!</p>';
+        echo '<script type="text/javascripy">
+        window.onload = function () {
+          alert("sign up successful") }
+        </script>';;
     }
 }
