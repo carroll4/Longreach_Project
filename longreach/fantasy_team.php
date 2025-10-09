@@ -173,14 +173,14 @@ require_once 'includes/login_view.inc.php';
                         <label for="team_name">Team Name:</label><br>
                         <input type="text" id="team_name" name="team_name" placeholder="Enter Team Name" required><br>
 
-                        <label>Player 1:</label>
+                        <label>Player 11:</label>
                         <select id="dropdown1" onchange="f1()">
                             <?php
                             // Get players from database for user to select from
                             $players = mysqli_query($conn, "SELECT * FROM `players` WHERE 1");
                             while($c = mysqli_fetch_array($players)) {
                             ?>
-                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?>  Points:<?php echo $c['Points']?></option>
+                            <option name="<?php echo $c['ID']?>" value="<?php echo $c['Points']?>"><?php echo $c['Name'] ?> £:<?php echo $c['Price']?></option>
                             <?php } ?>
                         </select>
                         <input type="hidden" name="player1ID" id="player1ID">
