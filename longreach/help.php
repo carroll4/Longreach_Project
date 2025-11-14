@@ -58,7 +58,7 @@ require_once 'includes/login_view.inc.php';
                             </p>
                         </div>
                     </div> 
-                    <div class="column">
+                    <div class="column" id="cup_col">
                         <img src="Images/trophy.webp" id="cup_img">
                     </div>              
                 </div>

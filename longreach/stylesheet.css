@@ -308,6 +308,11 @@ td {
         padding: 5px;
     }
 
+    #cup_col {
+        flex: 100%;
+        padding: 5px;
+    }
+
     #cup_img{
         width: 78%;
     }
