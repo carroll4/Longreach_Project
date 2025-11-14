@@ -28,7 +28,8 @@
     }
 
     .row{
-        display: block;
+        display: block !important;
+        width: 100%;
     }
 
     #cup_img{
